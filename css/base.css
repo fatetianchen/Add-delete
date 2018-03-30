@@ -1,0 +1,160 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "微软雅黑";
+	padding-top: 100px;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+.clearfix:after,.clearfix:before{  /*清除浮动*/
+   content: "";
+   display: table;
+}
+.clearfix:after{
+   clear: both;
+}
+.clearfix{
+  *zoom:1; /*兼容IE和IE7*/
+}
+.poa{
+	position: absolute;
+}
+.por{
+	position: relative;
+}	
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.table{
+	margin: 0 auto;
+	width: 800px;
+}
+.tac{
+	text-align: center !important;
+}
+
+.table th{
+	padding: 10px 25px;
+}
+.table td{
+	padding: 10px 25px;
+}
+.arr-bth{
+	width: 100%;
+	text-align: center ;
+	margin-bottom: 10px;	
+}
+.table tr>td:nth-of-type(1){
+	text-align: center;
+}
+.table tr>td:nth-of-type(1) img{
+	width: 40px;
+	height: 40px;
+
+}
+.arr-bth button{
+	padding: 0 10px;
+}
+.tanc{
+	width: 400px;
+	height: 200px;	
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	background-color: pink;
+	margin-top: -100px;
+	margin-left: -200px;
+	box-shadow:0px 0px 6px #666;	
+	padding: 20px;
+	box-sizing: border-box;	
+}
+.tanc-o1{
+	opacity: 1;
+}
+.tanc>div{
+	width: 100%;
+	height: 25px;
+	margin-bottom: 5px;
+}
+
+.tanc span{
+	float: left;
+	display: inline-block;
+	height: 100%;
+	width: 130px;
+	line-height: 25px;
+	text-align: right;
+}
+.tanc input{
+	float: left;
+	height: 25px;
+	width: 50%;
+	box-sizing: border-box;
+}
+.tanc button{
+	padding: 5px 25px;
+	margin: 0 auto;
+}
+.tanc-xx{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	width: 15px !important;
+	height: 15px !important;
+	background:url(../img/XXX.png) no-repeat center center;
+	background-size: cover;
+}
+.arr-tanc-c{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	height: 150px;
+	margin-top: -80px;
+	margin-left: -150px;
+	background-color: pink;
+
+}
+.tz-mask{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 99;
+	display: none;
+}
+.arr-tanc-c{
+	display: none;
+}
+.arr-tanc-c .tanc-c-text{
+	width: 100%;
+	height: 100px;
+	line-height: 100px;
+	/* padding: 0 30px; */
+	text-align: center;
+	box-sizing: border-box;
+}
+.arr-tanc-c .tanc-c-text input{
+	height: 30px;
+	/* font-size: 10px; */
+}
+.arr-tanc-c .tanc-c-button{
+	text-align: center;
+}
+.arr-tanc-c .tanc-c-button button{
+	padding: 3px 20px;
+}
+.tanc-bk{
+	display: block;	
+}
