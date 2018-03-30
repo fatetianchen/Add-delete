@@ -38,7 +38,7 @@ $('#arr-bth-z').click(function(){//增加填写完信息后，点击提交发送
 		},//false true
 		success: function(data){
 		console.log(data)
-		$('.table').append("<tr><td><img src="+data.headimg+" /></td><td>"+data.nickname+"</td><td>"+data.unionid+"</td><td>"+data.scoreRecords+"</td><td>"+data.scoreRecords+"</td></tr>");
+		$('.table').append("<tr class='tr-on'><td><img src="+data.headimg+" /></td><td>"+data.nickname+"</td><td>"+data.unionid+"</td><td>"+data.scoreRecords+"</td><td>"+data.scoreRecords+"</td></tr>");
 		$('.tz-mask').removeClass('tanc-bk');
 		},					
 		error : function(err) {
