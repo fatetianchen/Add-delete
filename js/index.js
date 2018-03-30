@@ -1,5 +1,5 @@
 $.ajax({
-	url: 'http://192.168.1.28:3000/api/users',
+	url: 'https://wechat-fans.gamepoch.com/api/users',
 	type: "GET",
 	dataType: "json",
 	success: function(data){
@@ -28,7 +28,7 @@ $('.tanc-xx').click(function(){
 });
 $('#arr-bth-z').click(function(){//增加填写完信息后，点击提交发送至后台然后返回
 	$.ajax({
-		url: 'http://192.168.1.28:3000/api/users/',
+		url: 'https://wechat-fans.gamepoch.com/api/users',
 		type:'POST',
 		dataType: "json",
 		data:{
@@ -72,7 +72,7 @@ $('.arr-bth-x').click(function(){ //点击修改弹出框并获取当前信息
 	console.log(img+":"+name+":"+id+":"+soc7+":"+socz);
 	var Rlname = [];
 	$.ajax({
-		url: 'http://192.168.1.28:3000/api/users',
+		url: 'https://wechat-fans.gamepoch.com/api/users',
 		method:'GET',
 		dataType: "json",
 		data:{},//false true
@@ -93,7 +93,7 @@ $('.arr-bth-x').click(function(){ //点击修改弹出框并获取当前信息
 });
 $('#arr-bth-x').click(function(){ //修改指定的一行信息
 	$.ajax({
-		url: 'http://192.168.1.28:3000/api/users/'+url_id,
+		url: 'https://wechat-fans.gamepoch.com/api/users/'+url_id,
 		method:'PATCH',
 		dataType: "json",
 		data:{
@@ -103,7 +103,7 @@ $('#arr-bth-x').click(function(){ //修改指定的一行信息
 		},//false true
 		success: function(data){
 			console.log(data);
-			$('.tanc').removeClass('tanc-bk');
+			$('.tz-mask').removeClass('tanc-bk');
 			$('.table tr').eq(j).find("td:eq(0)>img").text(data.headimg);
 			$('.table tr').eq(j).find("td:eq(1)").text(data.nickname);
 			$('.table tr').eq(j).find("td:eq(2)").text(data.unionid);
@@ -119,7 +119,7 @@ $('.arr-bth-s').click(function(){ //删除指定的一行信息
 	var name = $('.table tr').eq(j).find("td:eq(1)").text();
 	var Slname = [];
 	$.ajax({
-		url: 'http://192.168.1.28:3000/api/users',
+		url: 'https://wechat-fans.gamepoch.com/api/users',
 		method:'GET',
 		dataType: "json",
 		data:{},//false true
@@ -133,7 +133,7 @@ $('.arr-bth-s').click(function(){ //删除指定的一行信息
 			var  url = Slname[0]._id
 			url_id = url;
 			$.ajax({
-				url: 'http://192.168.1.28:3000/api/users/'+url_id,
+				url: 'https://wechat-fans.gamepoch.com/api/users/'+url_id,
 				method:'DELETE',
 				dataType: "json",
 				data:{},//false true
@@ -156,7 +156,31 @@ $('.arr-bth-c').click(function(){ //点击查询弹出框
 	$('.arr-tanc-c').css('display','block');
 	$('.tanc').css('display','none');
 })
-$('#arr-bth-c').click(function(){ //点击查询 提交信息给后台。
 
+$('#arr-bth-c').click(function(){ //点击查询 提交信息给后台。
+	var xname = $('#cx-name').val();
+	$.ajax({
+		url: 'https://wechat-fans.gamepoch.com/api/users',
+		type: "GET",
+		dataType: "json",
+		success: function(data){
+			console.log(xname);
+			for(var i in data){
+				//console.log(data[i]);
+				if(xname == data[i].unionid){
+					console.log(data[i]);
+					$('.tz-mask').removeClass('tanc-bk');
+
+				}else{
+					$('.tanc-c-title').text('查无此人,请确认用户信息');
+					// alert('查无此人');
+				}
+		}
+			
+		},					
+		error : function(err) {
+		
+		}
+	});
 
 })

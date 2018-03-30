@@ -144,6 +144,7 @@ ul,li{
 	/* padding: 0 30px; */
 	text-align: center;
 	box-sizing: border-box;
+	position: relative;
 }
 .arr-tanc-c .tanc-c-text input{
 	height: 30px;
@@ -157,4 +158,13 @@ ul,li{
 }
 .tanc-bk{
 	display: block;	
+}
+.tanc-c-title{
+	height: 25px;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	line-height: 25px;
+	text-align: center;
+	color: red;
 }
